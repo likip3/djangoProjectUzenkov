@@ -1,0 +1,11 @@
+/.idea
+/venv
+*.csv
+*.code-workspace
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+files
+*.bak

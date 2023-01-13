@@ -1,0 +1,496 @@
+body {
+  background: #181d1c;
+}
+
+
+
+/*modileMenu*/
+    .open-main-nav{
+        display: none;
+            position: fixed;
+    }
+/* Main menu positionning */
+.main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #FFF;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .375s;
+}
+
+.main-nav.is-open {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+}
+
+/* Yellow band effect */
+.main-nav::before {
+	 content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: #FEDC2A;
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+}
+
+.main-nav.is-open::before {
+    transform: skew(-14deg) translateX(0);
+}
+
+/* Skewing effect on menu links */
+.main-nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 93%; /* Should be 100%, but we have a notice message :D */
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+}
+
+.main-nav li {
+    display: block;
+    margin: .5rem 0;
+    text-align: right;
+    transform: skew(16deg);
+}
+
+/* Apparition effect on links */
+.main-nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.main-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.main-nav li:nth-child(1) a {
+	transition: all 275ms 175ms
+}
+.main-nav li:nth-child(2) a {
+	transition: all 275ms 225ms
+}
+.main-nav li:nth-child(3) a {
+	transition: all 275ms 275ms
+}
+.main-nav li:nth-child(4) a {
+	transition: all 275ms 325ms
+}
+.main-nav li:nth-child(5) a {
+	transition: all 275ms 375ms
+}
+
+
+/* Decoration */
+.main-nav ul,
+.main-nav li {
+	list-style: none;
+	padding: 0;
+}
+.main-nav a {
+	display: block;
+	padding: 12px 0;
+	color: #5A3B5D;
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
+.open-main-nav {
+	position: fixed;
+	top: 15px;
+	padding-top: 20px;
+	right: 15px;
+	z-index: 1000;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+.open-main-nav:focus {
+	outline: none;
+}
+.burger {
+	position: initial;
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 0 auto;
+	background: #5A3B5D;
+	transform: skew(5deg);
+	transition: all .275s;
+}
+
+.burger:after,
+.burger:before {
+	content: '';
+	display: block;
+	height: 100%;
+	background: #5A3B5D;
+	transition: all .275s;
+}
+
+.burger:after {
+	transform: translateY(-12px) translateX(-2px) skew(-20deg);
+}
+
+.burger:before {
+	transform: translateY(-16px) skew(-10deg);
+}
+
+/* Toggle State part */
+.is-open .burger {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.is-open .burger:before {
+	transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.is-open .burger:after {
+	transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
+}
+
+/* MENU Text part */
+
+.burger-text {
+	display: block;
+	font-size: .675rem;
+	letter-spacing: .05em;
+	margin-top: .5em;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	color: #5A3B5D;
+}
+
+.device {
+	position: relative;
+	width: 345px;
+	height: 600px;
+	background: #FFF;
+	border: 1px solid #EEE;
+	border-radius: 3px;
+	box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+}
+
+.container {
+	position: fixed;
+	top: 0; right: 0;
+	bottom: 0; left: 0;
+	overflow: hidden;
+	background: linear-gradient(to bottom, #eee, #ddd);
+}
+
+html {
+	height: 100%;
+}
+/*body {*/
+/*	height: 100%;*/
+/*	display: flex;*/
+/*	justify-content: center;*/
+/*	align-items: center;*/
+/*}*/
+
+/*end region*/
+
+
+.yearTable .h2{
+  position: static !important;
+}
+
+.yearTable{
+  max-width: 300px;
+}
+
+.yearList{
+  display: flex;
+  gap: 50px;
+  column-gap: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-header-nav {
+  position: fixed;
+  float: left;
+  background: #212828;
+  width: 13%;
+  height: 100vh;
+  padding: 2%;
+  color: aliceblue;
+  border-right: 5px solid #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-items: center;
+    z-index:99;
+}
+
+.main-header-nav h2 {
+  width: 100%;
+}
+
+.site-navigation-item a {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.site-navigation {
+  height: 50%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.admin-icon {
+  margin-top: auto;
+}
+
+.admin-icon-img {
+  width: 25px;
+  height: 25px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+main {
+  color: aliceblue;
+  margin-left: 13%;
+  padding: 5%;
+}
+
+main h1 {
+  /*padding-top: 40px;*/
+  margin-top: 0;
+  margin-bottom: 40px;
+  margin-left: 70px;
+}
+
+main p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 40px;
+}
+
+.image-blurred-edge {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/mainprogramer.png');
+  width: 100%;
+  height: 429px;
+  box-shadow: 0 0 8px 8px #181d1c inset;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+main h2 {
+  position: relative;
+  left: -20%;
+  text-align: center;
+  margin: 50px 0;
+}
+
+td {
+  border: 1px solid #4d4d4d;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+tr,
+td {
+  padding: 7px;
+  max-width: 300px;
+}
+
+tr:first-child {
+  font-weight: bold;
+}
+
+table:nth-child(6) td:nth-child(3n) {
+  border-top: none;
+  border-bottom: none;
+  width: 50px;
+}
+
+/*asdfasdfasdfas*/
+
+.vacancies {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin-top: 10px;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  grid-template-areas:
+    "title skills salary"
+    "description skills info"
+    "description skills info"
+    "description skills date";
+  gap: 20px;
+
+  margin-bottom: 10px;
+  color: #ffffff;
+  background-color: #212828;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.card .info{
+  grid-area: info;
+}
+
+.info p{
+  font-size: 23px;
+  padding: 20px 30px;
+}
+
+
+
+.salary {
+  grid-area: salary;
+  justify-self: end;
+  align-self: start;
+
+  margin-right: 100px;
+  padding: 5px 15px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  background-image: linear-gradient(180deg, #2b003d 0%, #1a153f 100%);
+  border-radius: 5px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.description {
+  grid-area: description;
+  padding-left: 20px;
+}
+
+.card a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover{
+  color: #AEB4EA;
+}
+
+
+.title {
+  position: static;
+  margin: 0;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 36px;
+  grid-area: title;
+}
+
+.skill-list {
+  grid-area: skills;
+  margin: 0;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 25px;
+  background-color: #4d4d4d;
+  background-image: linear-gradient(180deg, #27262e 0%, #212929 100%);
+  border-radius: 8px;
+}
+
+.skill-list.skill-item::before {
+  margin-bottom: 8px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 0;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 4px;
+  left: 0;
+}
+
+.skill-item{
+  padding: 20px;
+  /* line-height: 0px; */
+}
+
+.date {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+  color: #AEB4EA;
+  text-align: end;
+  grid-area: date;
+  justify-self: end;
+  align-self: end;
+  margin-right: 10%;
+  width: 200px;
+}
+
+.description p {
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 25px;
+}
+img{
+    width: 80%;
+    height:auto;
+    margin-left: 10%
+}
+
+@media screen and (max-width: 1820px) {
+    .main-header-nav{
+        left: -250px;
+    transition: left 200ms ease-out;
+        width: 250px;
+
+    }
+    .open-main-nav{
+        display: inline-block;
+    }
+    .main-header-nav.is-open{
+    /*left: 100px;*/
+        left: 0;
+}
+    main{
+          margin-left: 0 !important;
+    }
+    img{
+    margin-left: 0;
+    width: 100%;
+
+
+}
+}
+

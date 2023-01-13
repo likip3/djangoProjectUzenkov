@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block main %}
+<h1>Аналитика по зарплатам и городам для профессии C# Программист</h1>
+{% for sheet in workbook %}
+<h2>{{ sheet.title }}</h2>
+<table>
+    {% for cells in sheet.values %}
+    <tr>
+        {% for value in cells %}
+            {% if value %}
+        <td>{{ value }}</td>
+                {% else %}
+        <td style="border: none; width: 200px"></td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
+{% endblock %}

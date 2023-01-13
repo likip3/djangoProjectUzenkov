@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+<h1>Навыки</h1>
+<section class="yearList">
+    {% for sheet in workbook %}
+    <div class="yearTable">
+        <h2>{{ sheet.title }}</h2>
+        <table>
+            {% for cells in sheet.values %}
+            <tr>
+                {% for value in cells %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
