@@ -40,8 +40,8 @@ def getHHRUData():
             "per_page": 100,
             "page": i,
             "order_by": "publication_time",
-            "date_from": "2022-12-15T00:00:00+0300",
-            "date_to": "2022-12-15T23:59:00+0300"
+            "date_from": "2022-12-30T00:00:00+0300",
+            "date_to": "2022-12-30T23:59:00+0300"
         }
 
         try:
@@ -70,7 +70,7 @@ def getHHRUData():
                 for r in vac['items']:
                     if any(x.lower() in ['с#', 'c sharp', 'шарп', 'c#'] for x in r['name'].split(' ')):
                         metaSkills, metaDesc = getMeta(r['id'])
-                        df.loc[len(df)] = [r['name'], metaDesc,
+                        df.loc[len(df)] = [r['name'].replace("&quot;", "\""), metaDesc.replace("&quot;", "\""),
                                            metaSkills,
                                            r['employer']['name'],
                                            salSet(r),
