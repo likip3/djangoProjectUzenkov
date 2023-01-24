@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% load static %}
-<link href="temp.css" rel="stylesheet">
 
 {% block main %}
     <h1>Последние вакансии</h1>
@@ -9,7 +8,7 @@
             <article class="card">
                 <a href="{{ row.7 }}"><h2 class="title">{{ row.0|safe }}</h2></a>
                 <div class="description">
-                  {{ row.1|striptags|safe }}
+                  {{ row.1|safe }}
                 </div>
                 <div class="skill-list">
                   <p class="skill-item">{{ row.2 }}</p>
