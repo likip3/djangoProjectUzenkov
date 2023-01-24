@@ -70,7 +70,7 @@ def getHHRUData():
                 for r in vac['items']:
                     if any(x.lower() in ['с#', 'c sharp', 'шарп', 'c#'] for x in r['name'].split(' ')):
                         metaSkills, metaDesc = getMeta(r['id'])
-                        df.loc[len(df)] = [r['name'].replace("&quot;", "\""), metaDesc.replace("&quot;", "\""),
+                        df.loc[len(df)] = [r['name'], metaDesc,
                                            metaSkills,
                                            r['employer']['name'],
                                            salSet(r),

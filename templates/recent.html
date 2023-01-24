@@ -7,16 +7,16 @@
         <section class="vacancies">
         {% for row in recentVacDF %}
             <article class="card">
-                <a href="{{ row.7 }}"><h2 class="title">{{ row.0 }}</h2></a>
+                <a href="{{ row.7 }}"><h2 class="title">{{ row.0|safe }}</h2></a>
                 <div class="description">
-                  {{ row.1|striptags }}
+                  {{ row.1|striptags|safe }}
                 </div>
                 <div class="skill-list">
                   <p class="skill-item">{{ row.2 }}</p>
                 </div>
                 <div class="salary">{{ row.4 }}</div>
                 <div class="info">
-                    <a href="{{ row.8 }}"><p>Работодатель: {{ row.3 }}</p></a>
+                    <a href="{{ row.8 }}"><p>Работодатель: {{ row.3|safe }}</p></a>
                     <p>Регион: {{ row.5 }}</p>
                 </div>
                 <div class="date">
