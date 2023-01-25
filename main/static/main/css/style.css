@@ -2,6 +2,17 @@ body {
   background: #181d1c;
 }
 
+.main-footer{
+    margin-left: 13%;
+    /*padding: 10px;*/
+    padding-left: 30px;
+}
+
+.main-footer p {
+    color: #b3b3b3;
+    margin-bottom: 0;
+}
+
 
 
 /*modileMenu*/
@@ -30,7 +41,6 @@ body {
     visibility: visible;
 }
 
-/* Yellow band effect */
 .main-nav::before {
 	 content: '';
     position: absolute;
@@ -48,11 +58,10 @@ body {
     transform: skew(-14deg) translateX(0);
 }
 
-/* Skewing effect on menu links */
 .main-nav ul {
     display: inline-flex;
     flex-direction: column;
-    height: 93%; /* Should be 100%, but we have a notice message :D */
+    height: 93%;
     align-items: flex-end;
     justify-content: center;
     transform: translateX(-18%) skew(-16deg);
@@ -65,7 +74,6 @@ body {
     transform: skew(16deg);
 }
 
-/* Apparition effect on links */
 .main-nav a {
     opacity: 0;
     transform: translateY(-10px);
@@ -92,7 +100,6 @@ body {
 }
 
 
-/* Decoration */
 .main-nav ul,
 .main-nav li {
 	list-style: none;
@@ -107,7 +114,6 @@ body {
 	font-weight: bold;
 }
 
-/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
 .open-main-nav {
 	position: fixed;
 	top: 15px;
