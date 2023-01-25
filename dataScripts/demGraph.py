@@ -187,6 +187,8 @@ class Report:
 
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(ncols=2, nrows=2)
         fig.patch.set_facecolor('#181d1c')
+        fig.patch.set_alpha(0)
+
 
         ax1.bar(x - width / 2, self.SalByYears.values(), width, label='средняя з/п')
         ax1.bar(x + width / 2, self.SalByYearsForVac.values(), width, label='з/п C# программист')
